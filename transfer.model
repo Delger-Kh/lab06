@@ -1,0 +1,13 @@
+# transfer.model - A2 constraints translated to PICT
+From:     Valid, Frozen, Missing
+To:       Valid, Missing, SameAsFrom
+Amount:   Normal, EqualBalance, EqualLimit, Zero, Negative, OverBalance, OverLimit
+Currency: Same, Different
+
+# [ERROR] from / to: the other parameters must be valid, so only ONE error per row
+IF [From] <> "Valid" THEN [To] = "Valid" AND [Amount] = "Normal";
+IF [To]   <> "Valid" THEN [From] = "Valid" AND [Amount] = "Normal";
+# [ERROR] amount values: accounts must be valid
+IF [Amount] IN {"Zero", "Negative", "OverBalance", "OverLimit"} THEN [From] = "Valid" AND [To] = "Valid";
+# [SINGLE] boundary values: test only in an otherwise clean, same-currency request
+IF [Amount] IN {"EqualBalance", "EqualLimit"} THEN [From] = "Valid" AND [To] = "Valid" AND [Currency] = "Same";

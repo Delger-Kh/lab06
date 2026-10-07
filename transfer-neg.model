@@ -1,0 +1,5 @@
+# transfer-neg.model - [ERROR] values marked with ~ (at most one negative value per row)
+From:     Valid, ~Frozen, ~Missing
+To:       Valid, ~Missing, ~SameAsFrom
+Amount:   Normal, EqualBalance, EqualLimit, ~Zero, ~Negative, ~OverBalance, ~OverLimit
+Currency: Same, Different
