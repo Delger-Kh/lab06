@@ -1,11 +1,10 @@
-cat > README.md <<'EOF'
 # Лаб 06 — Category-Partition ба PICT
 
-**Оюутан:** Х.Дэлгэр
+**Оюутан:** Х.Дэлгэр  
 **Код:** B222270835
 
 PICT-ийг `~/tools/pict`-д эх кодоос бүтээсэн (нотолгоо: `results/pict-build.txt`).
-EOF
+
 ---
 
 ## Хэсэг A — Category-Partition
